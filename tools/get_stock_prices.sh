@@ -14,7 +14,7 @@ logfile=${SCRIPT_PATH}/../log/get_stock_prices.py.log.$(date '+%Y%m%d')
 echo "get_stock_prices.py start ..." > $logfile
 
 while [ 1 ]; do
-    python get_stock_prices.py  /home/abin/geniustrader/data 2>1 >>  $logfile
+    python get_stock_prices.py  /public/workplace/gt_data 2>1 >>  $logfile
 done
 
 echo "get_stock_prices.py end ..." >> $logfile

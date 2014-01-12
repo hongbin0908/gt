@@ -19,17 +19,12 @@ def get_sp500():#{{{
     symbols = [symbol.strip().strip("\"") for symbol in resp.read().split("\n")[1:]]
     return symbols#}}}
 
-def get_dow30():#{{{
-    l=[]
-    for line in open('/home/abin/geniustrader/data/dow30.in'):
-        l.append(line.strip())
-    return l#}}}
 def main():
     if len(sys.argv) < 2:
        print_usage(sys.argv[0]);
        sys.exit(1)
     output_dir = sys.argv[1]
-    symbols = get_dow30()
+    symbols = get_sp500()
     for symbol in symbols:
         output = open(os.path.join(output_dir, symbol + ".txt"), "w") 
         yahoo_retry = 6

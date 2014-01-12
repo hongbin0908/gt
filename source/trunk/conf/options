@@ -1,5 +1,5 @@
 DB::module Text
-DB::text::directory /home/abin/geniustrader/data/
+DB::text::directory /public/workplace/gt_data/
 Brokers::module NoCosts 
 Path::Font::Arial /public/workplace/gt/data/arial.ttf
 Path::Font::Courier /public/workplace/gt/data/couri.ttf
