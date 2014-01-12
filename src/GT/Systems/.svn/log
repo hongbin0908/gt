@@ -1,0 +1,50 @@
+<modify-entry
+   name="ADX_RSI.pm"
+   present-props=""
+   has-prop-mods="false"
+   has-props="false"/>
+<modify-entry
+   committed-rev="15"
+   committed-date="2014-01-05T13:48:25.013797Z"
+   name="ADX_RSI.pm"
+   last-author="smartinvest "
+   uuid="e76dcc96-11ad-4453-a644-aac56d2ffba5"/>
+<modify-wcprop
+   name="ADX_RSI.pm"
+   propname="svn:wc:ra_dav:version-url"
+   propval="/svn/smartinvest/!svn/ver/15/trunk/src/GT/Systems/ADX_RSI.pm"/>
+<modify-entry
+   text-time="1970-01-01T00:00:00.000000Z"
+   name="ADX_RSI.pm"
+   kind="file"
+   deleted="false"
+   working-size="-1"
+   absent="false"
+   revision="16"/>
+<cp-and-translate
+   dest="ADX_RSI.pm"
+   name=".svn/tmp/text-base/ADX_RSI.pm.svn-base"/>
+<mv
+   dest=".svn/text-base/ADX_RSI.pm.svn-base"
+   name=".svn/tmp/text-base/ADX_RSI.pm.svn-base"/>
+<readonly
+   name=".svn/text-base/ADX_RSI.pm.svn-base"/>
+<modify-entry
+   name="ADX_RSI.pm"
+   checksum="311525fcd78ae34d5d47189b79719d5f"/>
+<modify-entry
+   name="ADX_RSI.pm"
+   text-time="working"/>
+<modify-entry
+   name="ADX_RSI.pm"
+   working-size="working"/>
+<modify-entry
+   committed-rev="16"
+   committed-date="2014-01-05T15:57:39.661358Z"
+   name=""
+   last-author="smartinvest"
+   uuid="e76dcc96-11ad-4453-a644-aac56d2ffba5"/>
+<modify-wcprop
+   name=""
+   propname="svn:wc:ra_dav:version-url"
+   propval="/svn/smartinvest/!svn/ver/16/trunk/src/GT/Systems"/>

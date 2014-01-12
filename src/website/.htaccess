@@ -1,0 +1,4 @@
+AddType text/html .shtml
+AddHandler server-parsed .html .shtml
+
+AddDefaultCharset UTF-8
