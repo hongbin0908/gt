@@ -1,0 +1,10 @@
+# example system_file for screen shot 4
+#
+# todays price close was above open
+
+S:G:And \
+  { S:Generic:Above {I:SMA 4 } { I:SMA  9 } } \
+  { S:Generic:Above {I:SMA 4 } { I:SMA  18 } } \
+  { S:Generic:Above {I:SMA 9 } { I:SMA  18 } }
+
+# end of system_file

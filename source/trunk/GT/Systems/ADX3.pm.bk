@@ -1,0 +1,110 @@
+package GT::Systems::ADX3;
+
+# Copyright 2000-2002 Raphaël Hertzog, Fabien Fulhaber
+# This file is distributed under the terms of the General Public License
+# version 2 or (at your option) any later version.
+
+# Standards-Version: 1.0
+
+use strict;
+use vars qw(@ISA @NAMES @DEFAULT_ARGS);
+
+use GT::Prices;
+use GT::Systems;
+use GT::Indicators::ADX;
+use GT::Indicators::ADXR;
+use GT::Indicators::SMA;
+
+@ISA = qw(GT::Systems);
+@NAMES = ("ADX3[#1]");
+@DEFAULT_ARGS = (14);
+
+=pod
+
+=head1 Trend following system
+
+=cut
+
+sub new {
+    my $type = shift;
+    my $class = ref($type) || $type;
+    my $args = shift;
+
+    my $self = { "args" => defined($args) ? $args : [5, 20, 10] };
+
+    return manage_object(\@NAMES, $self, $class, $self->{'args'}, "");
+}
+
+sub initialize {
+    my ($self) = @_;
+	
+
+
+	$self->{'sma4'} = GT::Indicators::SMA->new ([4]);
+	$self->{'sma9'} = GT::Indicators::SMA->new ([9]);
+	$self->{'sma18'} = GT::Indicators::SMA->new ([18]);
+    $self->{'allow_multiple'} = 0;
+    $self->add_indicator_dependency($self->{'sma4'}, 2);
+    $self->add_indicator_dependency($self->{'sma9'}, 2);
+    $self->add_indicator_dependency($self->{'sma18'}, 2);
+
+}
+
+#sub precalculate_interval {
+#    my ($self, $calc, $first, $last) = @_;
+#    if ($self->{'args'}->is_constant()) {
+		#my $period = $self->{'args'}->get_arg_constant(1);
+		#my $adx = GT::Indicators::ADX->new([$period]);
+		#$adx->calculate_interval($calc, $first, $last);
+		#my $adxr = GT::Indicators::ADXR->new([$period]);
+		#$adxr->calculate_interval($calc, $first, $last);
+#    }
+#    return;
+#}
+
+sub long_signal {
+    my ($self, $calc, $i) = @_;
+
+    #my $period = $self->{'args'}->get_arg_values($calc, $i, 1);
+    #my $adx = GT::Indicators::ADX->new([$period]);
+    #my $adxname = $adx->get_name(0);
+	#my $positive_di_name = $adx->get_name(1);
+	#my $negative_di_name = $adx->get_name(2);
+	#my $adxr = GT::Indicators::ADXR->new([$period]);
+    #my $adxr_name = $adxr->get_name;
+	my $sma4=$calc->indicators->get($self->{'sma4'}->get_name, $i);
+	my $sma9=$calc->indicators->get($self->{'sma9'}->get_name, $i);
+	my $sma18=$calc->indicators->get($self->{'sma18'}->get_name, $i);
+
+    #$self->remove_volatile_dependencies();
+    #$self->add_volatile_indicator_dependency($adx, 2);
+	#$self->add_volatile_indicator_dependency($adxr, 1);
+
+	
+    return 0 if (!$self->check_dependencies($calc, $i));
+	#if ($calc->indicators->get($positive_di_name, $i) < $calc->indicators->get($negative_di_name, $i)) {
+	#	return 0;
+	#}
+	#if ($calc->indicators->get($adxr_name, $i) < 25) {
+	#	return 0;
+	#}
+
+	print $sma4 . " " . $sma9 . " " .$sma18 . "\n";
+    if (
+		( $sma4 > $sma9)
+		&&
+		( $sma4 > $sma18)
+		&&
+		( $sma9 > $sma18)
+		)
+    {
+		return 1;
+    }
+    return 0;
+}
+
+sub short_signal {
+    my ($self, $calc, $i) = @_;
+
+    return 0;
+}
