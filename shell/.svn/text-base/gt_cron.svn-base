@@ -1,0 +1,3 @@
+# Run system activity accounting tool every 10 minutes
+*/1 * * * * root /bin/sh /home/abin/workspace/smartinvest/trunk/shell/check_get_stock_prices.sh
+

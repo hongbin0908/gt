@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/smartinvest/!svn/ver/1/trunk/shell
+END
+1
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/smartinvest/!svn/ver/1/trunk/shell/1
+END
+run_get_stock_prices.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/smartinvest/!svn/ver/1/trunk/shell/run_get_stock_prices.sh
+END
+gt_cron
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/smartinvest/!svn/ver/1/trunk/shell/gt_cron
+END
+check_get_stock_prices.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/smartinvest/!svn/ver/1/trunk/shell/check_get_stock_prices.sh
+END
