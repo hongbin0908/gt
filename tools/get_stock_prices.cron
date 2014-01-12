@@ -1,1 +1,0 @@
-10 10 * * * root /bin/bash  /home/abin/gt/tools/get_stock_prices.sh
