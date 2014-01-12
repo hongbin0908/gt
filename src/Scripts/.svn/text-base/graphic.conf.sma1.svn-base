@@ -1,9 +1,0 @@
-#
-# ./graphic.pl --file screenshot_1.gconf --out 'Screenshot 1.png' IBM
-#
---timeframe=day
---title=ScreenShot 1: %c
---type=candle
---add=Curve(Indicators::SMA 4,[0,0,0])
---add=Curve(Indicators::SMA 9,[0,255,0])
---add=Curve(Indicators::SMA 18,[0,0,255])

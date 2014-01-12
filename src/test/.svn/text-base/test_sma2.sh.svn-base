@@ -1,1 +1,0 @@
-perl ./backtest.pl --option='Graphic::BackgroundColor=White'   --system='SS_HB1 9 18 36'   --close-strategy='CS_HB1 9 18 36'   --money-management="Basic"   --graph=${resultdir}/$sym.png  $sym  > ${resultdir}/$sym.result
