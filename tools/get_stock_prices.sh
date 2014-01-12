@@ -13,6 +13,7 @@ mkdir -p ${SCRIPT_PATH}/../log/
 logfile=${SCRIPT_PATH}/../log/get_stock_prices.py.log.$(date '+%Y%m%d')
 echo "get_stock_prices.py start ..." > $logfile
 
+mkdir -p /public/workplace/gt_data
 while [ 1 ]; do
     python get_stock_prices.py  /public/workplace/gt_data 2>1 >>  $logfile
 done
